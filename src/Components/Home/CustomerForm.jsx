@@ -70,21 +70,21 @@ const CustomerForm = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">TrackingId</span>
+                                <span className="label-text">Tracking Id</span>
                             </label>
-                            <input name="trackingId" type="text" placeholder="trackingId" className="input input-bordered" required />
+                            <input name="trackingId" type="text" placeholder="Tracking Id" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Shipment Size</span>
                             </label>
-                            <input name="shipmentSize" type="text" placeholder="shipmentSize" className="input input-bordered" required />
+                            <input name="shipmentSize" type="text" placeholder="Shipment Size" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Box Count</span>
                             </label>
-                            <input name="boxCount" type="text" placeholder="boxCount" className="input input-bordered" required />
+                            <input name="boxCount" type="text" placeholder="Box Count" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -96,7 +96,7 @@ const CustomerForm = () => {
                             <label className="label">
                                 <span className="label-text">Checklist Quantity</span>
                             </label>
-                            <input name="checklistQuantity" type="text" placeholder="checklistQuantity" className="input input-bordered" required />
+                            <input name="checklistQuantity" type="text" placeholder="Checklist Quantity" className="input input-bordered" required />
                         </div>
 
 
