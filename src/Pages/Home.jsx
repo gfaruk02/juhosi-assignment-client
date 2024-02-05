@@ -1,9 +1,10 @@
+import CustomerForm from "../Components/Home/CustomerForm";
 
 
 const Home = () => {
     return (
         <div>
-          <div>Hello world!</div>  
+          <CustomerForm></CustomerForm>
         </div>
     );
 };
