@@ -8,7 +8,8 @@ const Navbar = () => {
             } > Home
             </NavLink>
         </li>
-        <li className="font-semibold font-poppins text-black text-base "> <NavLink to="/register" className={({ isActive, isPending }) =>
+        <li className="font-semibold font-poppins text-black text-base "> 
+        <NavLink to="/register" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "active" : "white"
         } > Register
         </NavLink>
@@ -22,7 +23,7 @@ const Navbar = () => {
         </li>
     </>
     return (
-        <div className="navbar bg-base-200 mb-5">
+        <div className="navbar bg-base-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
