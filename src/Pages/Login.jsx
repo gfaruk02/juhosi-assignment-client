@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const { signInUser } = useContext(AuthContext);
     const handleLogin = e =>{
         e.preventDefault();
         const form = e.target;
@@ -9,6 +13,21 @@ const Login = () => {
         const password = form.password.value;
         const data = {email, password}
         console.log(data);
+        signInUser(email, password)
+        .then(result => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+          e.target.reset();
+          navigate("/");
+        })
+        .catch(error => {
+          console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Your email and password do not match. Please try again',
+          })
+        })
     }
     return (
         <div className="hero bg-base-100">

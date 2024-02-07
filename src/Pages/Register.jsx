@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
+    const { registerUser } = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleRegister = e =>{
         e.preventDefault();
         const form = e.target;
@@ -11,6 +16,33 @@ const Register = () => {
         const role = "customer";
         const data = {name, email, password, role}
         console.log(data);
+        registerUser(email, password)
+        .then(result => {
+          console.log(result);
+          Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'CONGRATULATIONS! You have now successfully registered! ',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          //update user name and photo url
+        //   updateProfile(result.user, {
+        //     displayName: name,
+        //     photoURL: photo,
+        //   })
+          e.target.reset();
+          navigate('/');
+
+        })
+        .catch(error => {
+          console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The email address is already in use. Please use a different email address',
+          })
+        })
     }
     return (
         <div className="hero bg-base-100">
