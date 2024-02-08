@@ -2,6 +2,10 @@
 
 const Header = () => {
     return (
+        <> 
+        <img className="mask mask-heart" src="https://i.ibb.co/7tKrkX2/faruk-2.png" />
+
+
         <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/WGMQ86v/d1.jpg)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
@@ -12,6 +16,8 @@ const Header = () => {
                 </div>
             </div>
         </div>
+        </>
+
     );
 };
 
